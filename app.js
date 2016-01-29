@@ -14,6 +14,8 @@ var index = require('./routes/index');
 // var user = require('./routes/user');
 
 var app = express();
+var methodOverride = require('method-override');
+var session = require('express-session');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -24,9 +26,13 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(methodOverride());
 app.use(express.cookieParser('moodi key'));
-app.use(express.session());
+app.use(session({
+    secret: 'moodi key',
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'assets')));
 
