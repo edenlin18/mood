@@ -36,7 +36,6 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-app.use(app.router);
 app.use(express.static(path.join(__dirname, 'assets')));
 
 // development only
