@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 
 var index = require('./routes/index');
+var home = require('./routes/home');
 
 // Example route
 // var user = require('./routes/user');
@@ -39,12 +40,13 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'assets')));
 
 // development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
+// if ('development' == app.get('env')) {
+//   app.use(express.errorHandler());
+// }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', home.view);
+app.get('/home', home.view);
 // Example route
 // app.get('/users', user.list);
 
