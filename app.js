@@ -30,7 +30,7 @@ app.set('view engine', 'handlebars');
 // app.use(json());
 // app.use(express.urlencoded());
 app.use(methodOverride());
-app.use(express.cookieParser('moodi key'));
+// app.use(express.cookieParser('moodi key'));
 app.use(session({
     secret: 'moodi key',
     resave: true,
