@@ -6,7 +6,6 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express-handlebars')
 
 var index = require('./routes/index');
 
@@ -14,6 +13,10 @@ var index = require('./routes/index');
 // var user = require('./routes/user');
 
 var app = express();
+var handlebars = require('express-handlebars')
+var favicon = require('favicon');
+var logger = require('logger');
+var json = require('json');
 var methodOverride = require('method-override');
 var session = require('express-session');
 
@@ -22,8 +25,9 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
-app.use(express.logger('dev'));
-app.use(express.json());
+app.use(favicon());
+app.use(logger('dev'));
+app.use(json());
 app.use(express.urlencoded());
 app.use(methodOverride());
 app.use(express.cookieParser('moodi key'));
