@@ -28,7 +28,7 @@ app.set('view engine', 'handlebars');
 // app.use(favicon());
 // app.use(logger('dev'));
 // app.use(json());
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
 app.use(methodOverride());
 app.use(express.cookieParser('moodi key'));
 app.use(session({
