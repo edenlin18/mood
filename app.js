@@ -9,7 +9,6 @@ var path = require('path');
 var handlebars = require('express-handlebars')
 
 var index = require('./routes/index');
-var home = require('./routes/home');
 
 // Example route
 // var user = require('./routes/user');
@@ -26,10 +25,10 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('Intro HCI secret key'));
+app.use(express.cookieParser('moodi key'));
 app.use(express.session());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 // development only
 if ('development' == app.get('env')) {
@@ -38,7 +37,6 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-app.get('/home', home.view);
 // Example route
 // app.get('/users', user.list);
 
