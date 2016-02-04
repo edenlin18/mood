@@ -9,6 +9,7 @@ var path = require('path');
 
 var index = require('./routes/index');
 var home = require('./routes/home');
+var feedPage = require('./routes/feedPage');
 
 // Example route
 // var user = require('./routes/user');
@@ -47,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 // Add routes here
 app.get('/', home.view);
 app.get('/home', home.view);
+app.get('/feedPage', feedPage.view);	
 // Example route
 // app.get('/users', user.list);
 

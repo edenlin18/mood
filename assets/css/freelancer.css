@@ -462,3 +462,7 @@ footer .footer-below {
     width: 530px;
     height: auto;
 }
+
+#feedSection{
+    height: 1080px;
+}
