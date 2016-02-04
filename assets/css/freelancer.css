@@ -462,3 +462,22 @@ footer .footer-below {
     width: 530px;
     height: auto;
 }
+
+#feedSection{
+    height: 1080px;
+}
+
+.feeds{
+    height: 100px;
+    margin: auto;
+    width: 80%;
+    background: white;
+}
+
+.feeds img{
+    float: left;
+    height: 80px;
+    width: 80px;
+    vertical-align: middle;
+    margin: auto;
+}
