@@ -8,42 +8,42 @@ exports.view = function(req, res) {
 	res.render('feedPage',{"imgName":"/img/"+mood+"background.jpg",
 		'feeds' :[{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},
 		{
 			'title':'test',
-			'content' : 'blahlajkfldjklfjskljdksljkflsfds',
+			'content' : 'testing feed',
 			'id':mood
 		},]
 	});

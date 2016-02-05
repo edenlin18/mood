@@ -476,8 +476,13 @@ footer .footer-below {
 
 .feeds img{
     float: left;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: auto;
     vertical-align: middle;
     margin: auto;
+}
+
+.emoji-item{
+    width: 30%;
+    height: auto;
 }
