@@ -9,8 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Moodi - What is on your mind?</title>
-
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -69,10 +67,12 @@
 		<div class="container" style="background-image:url({{imgName}}); background-attachment: fixed; width:100%; height:1080px">
 			{{#each feeds}}
 			    <div class="feeds" id="{{id}}">
-			      {{> feed title=title content=content id=id}}
+			      {{> feed title=title content=content id=id mood=mood}}
 			    </div>
 			{{/each}}
 		</div>	
-	</section>>
-	
+	</section>
+	<div class="container" id="add-post-button">
+		<a href="/newPost?mood={{mood}}" class="btn btn-primary btn-lg active" role="button" style="float:right;">Add Post</a>
+	</div>
 </body>
