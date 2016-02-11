@@ -1,7 +1,6 @@
 /*
  * GET feed page.
  */
-
 exports.view = function(req, res) {
 	var mood = req.query.mood;
 	console.log(mood);
