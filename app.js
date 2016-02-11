@@ -9,7 +9,8 @@ var path = require('path');
 var index = require('./routes/index');
 var about = require('./routes/about');
 var feedPage = require('./routes/feedPage');
-
+var details = require('./routes/details');
+var newPost = require('./routes/newPost');
 // Example route
 // var user = require('./routes/user');
 
@@ -48,6 +49,8 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.get('/', index.view);
 app.get('/about', about.view);
 app.get('/feedPage', feedPage.view);
+app.get('/details',details.feeddetails);
+app.get('/newPost',newPost.writePost);
 // Example route
 // app.get('/users', user.list);
 
