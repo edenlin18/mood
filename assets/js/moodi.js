@@ -10,4 +10,149 @@ $(document).ready(function() {
  */
 function initializePage() {
 	// add any functionality and listeners you want here
+	$('.modal').on('hidden.bs.modal', function() {
+		$(this).find('form')[0].reset();
+	});
+
+	$('.modal').on('show.bs.modal', function() {
+		if ($(document).height() > $(window).height()) {
+			// no-scroll
+			$('body').addClass("modal-open-noscroll");
+		} else {
+			$('body').removeClass("modal-open-noscroll");
+		}
+	})
+	$('.modal').on('hide.bs.modal', function() {
+		$('body').removeClass("modal-open-noscroll");
+	})
+}
+
+function reportErrors(errors) {
+	var msg = errors[0];
+	for (var i = 1; i < errors.length; i++) {
+		msg += '<br>' + errors[i];
+	}
+
+	$('#loginModal .modal-dialog').addClass('shake');
+	$('.error').addClass('alert alert-danger').html(msg);
+	$('input[type="password"]').val('');
+	setTimeout(function() {
+		$('#loginModal .modal-dialog').removeClass('shake');
+	}, 1000);
+}
+
+function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+	return re.test(email);
+}
+
+function validateLoginForm() {
+	var email = document.loginForm.email.value;
+	var password = document.loginForm.password.value;
+	var errors = [];
+
+	if (!validateEmail(email)) {
+		errors[errors.length] = 'You must enter a valid email address.';
+	}
+
+	if (password == '') {
+		errors[errors.length] = 'Password cannot be empty.';
+	}
+
+	if (errors.length > 0) {
+		reportErrors(errors);
+		return false;
+	}
+
+	return true;
+}
+
+function validateSignupForm() {
+	var email = document.signupForm.email.value;
+	var password = document.signupForm.password.value;
+	var confirmedPassword = document.signupForm.confirmedPassword.value;
+	var errors = [];
+
+	if (!validateEmail(email)) {
+		errors[errors.length] = 'You must enter a valid email address.';
+	}
+
+	if (password == '') {
+		errors[errors.length] = 'Password cannot be empty.';
+	}
+
+	if(password != confirmedPassword) {
+		errors[errors.length] = 'Please enter the same password.';
+	}
+
+	if (errors.length > 0) {
+		reportErrors(errors);
+		return false;
+	}
+
+	return true;
+}
+
+/*
+ *
+ * login-register modal
+ * Autor: Creative Tim
+ * Web-autor: creative.tim
+ * Web script: http://creative-tim.com
+ * 
+ */
+function showSignupForm() {
+	$('.loginBox').fadeOut('fast', function() {
+		$('.registerBox').fadeIn('fast');
+		$('.login-footer').fadeOut('fast', function() {
+			$('.register-footer').fadeIn('fast');
+		});
+		$('.modal-title').html('Signup with');
+	});
+	$('.error').removeClass('alert alert-danger').html('');
+
+}
+
+function showLoginForm() {
+	$('#loginModal .registerBox').fadeOut('fast', function() {
+		$('.loginBox').fadeIn('fast');
+		$('.register-footer').fadeOut('fast', function() {
+			$('.login-footer').fadeIn('fast');
+		});
+
+		$('.modal-title').html('Login with');
+	});
+	$('.error').removeClass('alert alert-danger').html('');
+}
+
+function openLoginModal() {
+	showLoginForm();
+	setTimeout(function() {
+		$('#loginModal').modal('show');
+	}, 230);
+
+}
+
+function openRegisterModal() {
+	showRegisterForm();
+	setTimeout(function() {
+		$('#loginModal').modal('show');
+	}, 230);
+
+}
+
+function loginAjax() {
+	/*   Remove this comments when moving to server
+	$.post( "/login", function( data ) {
+	        if(data == 1){
+	            window.location.replace("/home");            
+	        } else {
+	             shakeModal(); 
+	        }
+	    });
+	*/
+
+	/*   Simulate error message from the server   */
+	shakeModal();
 }
