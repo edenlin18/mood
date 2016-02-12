@@ -11,6 +11,7 @@ var about = require('./routes/about');
 var feedPage = require('./routes/feedPage');
 var details = require('./routes/details');
 var newPost = require('./routes/newPost');
+var emoji = require('./routes/emoji');
 // Example route
 // var user = require('./routes/user');
 
@@ -51,6 +52,7 @@ app.get('/about', about.view);
 app.get('/feedPage', feedPage.view);
 app.get('/details',details.feeddetails);
 app.get('/newPost',newPost.writePost);
+app.get('/emoji',emoji.emojiInfo);
 // Example route
 // app.get('/users', user.list);
 

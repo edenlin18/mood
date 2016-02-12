@@ -238,3 +238,13 @@ body.modal-open-noscroll {
     border-color: #00A4E4;
     color:  #00A4E4;
 }
+
+.emoji-story{
+    height: 300px;
+    background: #F5F5F5;
+}
+
+.emoji{
+    height: 30px;
+    width: 30px;
+}

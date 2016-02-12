@@ -24,7 +24,28 @@ function initializePage() {
 	})
 	$('.modal').on('hide.bs.modal', function() {
 		$('body').removeClass("modal-open-noscroll");
-	})
+	});
+
+	$('.text-story').on('keyup', convertToEmoji);
+}
+
+function convertToEmoji(e){
+	if(e.which == 32){ // Press space
+        var words = $(this).val().split(' ');
+        var lastWord = words[words.length - 2];
+        console.log("last word is: "+lastWord);
+
+        //var emojiLib = JSON.parse('../emoji.json');
+        $.get( "emoji?word="+lastWord, function( data ) {
+        	console.log(data);
+        	if(data == ""){
+        		$('.emoji-story').append(lastWord+" ");
+        	}else{
+        		$('.emoji-story').append(data);	
+        	}
+        });
+        
+    }
 }
 
 function reportErrors(errors) {
