@@ -33,6 +33,7 @@ function initializePage() {
 		$('#loginButton').css('display', 'none');
 	} else {
 		$('#logoutButton').css('display', 'none');
+		$('#add-post-button').css('display', 'none');
 	}
 
 	$('#logoutButton').click(logout);
@@ -40,23 +41,23 @@ function initializePage() {
 	$('.text-story').on('keyup', convertToEmoji);
 }
 
-function convertToEmoji(e){
-	if(e.which == 32){ // Press space
+function convertToEmoji(e) {
+	if (e.which == 32) { // Press space
 		var words = $(this).val().split(' ');
 		var lastWord = words[words.length - 2];
-		console.log("last word is: "+lastWord);
+		console.log("last word is: " + lastWord);
 
-        //var emojiLib = JSON.parse('../emoji.json');
-        $.get( "emoji?word="+lastWord, function( data ) {
-        	console.log(data);
-        	if(data == ""){
-        		$('.emoji-story').append(lastWord+" ");
-        	}else{
-        		$('.emoji-story').append(data);	
-        	}
-        });
-        
-    }
+		//var emojiLib = JSON.parse('../emoji.json');
+		$.get("emoji?word=" + lastWord, function(data) {
+			console.log(data);
+			if (data == "") {
+				$('.emoji-story').append(lastWord + " ");
+			} else {
+				$('.emoji-story').append(data);
+			}
+		});
+
+	}
 }
 
 var myLocalStorage = {
@@ -193,47 +194,47 @@ function logout() {
  * Web script: http://creative-tim.com
  * 
  */
- function showSignupForm() {
- 	$('.loginBox').fadeOut('fast', function() {
- 		$('.registerBox').fadeIn('fast');
- 		$('.login-footer').fadeOut('fast', function() {
- 			$('.register-footer').fadeIn('fast');
- 		});
- 		$('.modal-title').html('Signup with');
- 	});
- 	$('.error').removeClass('alert alert-danger').html('');
+function showSignupForm() {
+	$('.loginBox').fadeOut('fast', function() {
+		$('.registerBox').fadeIn('fast');
+		$('.login-footer').fadeOut('fast', function() {
+			$('.register-footer').fadeIn('fast');
+		});
+		$('.modal-title').html('Signup with');
+	});
+	$('.error').removeClass('alert alert-danger').html('');
 
- }
+}
 
- function showLoginForm() {
- 	$('#loginModal .registerBox').fadeOut('fast', function() {
- 		$('.loginBox').fadeIn('fast');
- 		$('.register-footer').fadeOut('fast', function() {
- 			$('.login-footer').fadeIn('fast');
- 		});
+function showLoginForm() {
+	$('#loginModal .registerBox').fadeOut('fast', function() {
+		$('.loginBox').fadeIn('fast');
+		$('.register-footer').fadeOut('fast', function() {
+			$('.login-footer').fadeIn('fast');
+		});
 
- 		$('.modal-title').html('Login with');
- 	});
- 	$('.error').removeClass('alert alert-danger').html('');
- }
+		$('.modal-title').html('Login with');
+	});
+	$('.error').removeClass('alert alert-danger').html('');
+}
 
- function openLoginModal() {
- 	showLoginForm();
- 	setTimeout(function() {
- 		$('#loginModal').modal('show');
- 	}, 230);
+function openLoginModal() {
+	showLoginForm();
+	setTimeout(function() {
+		$('#loginModal').modal('show');
+	}, 230);
 
- }
+}
 
- function openRegisterModal() {
- 	showRegisterForm();
- 	setTimeout(function() {
- 		$('#loginModal').modal('show');
- 	}, 230);
+function openRegisterModal() {
+	showRegisterForm();
+	setTimeout(function() {
+		$('#loginModal').modal('show');
+	}, 230);
 
- }
+}
 
- function loginAjax() {
+function loginAjax() {
 	/*   Remove this comments when moving to server
 	$.post( "/login", function( data ) {
 	        if(data == 1){
@@ -244,6 +245,6 @@ function logout() {
 	    });
 */
 
-/*   Simulate error message from the server   */
-shakeModal();
+	/*   Simulate error message from the server   */
+	shakeModal();
 }
