@@ -5,6 +5,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var bodyParser = require('body-parser')
 
 var index = require('./routes/index');
 var about = require('./routes/about');
@@ -12,6 +13,8 @@ var feedPage = require('./routes/feedPage');
 var details = require('./routes/details');
 var newPost = require('./routes/newPost');
 var emoji = require('./routes/emoji');
+var login = require('./routes/login');
+var signup = require('./routes/signup');
 // Example route
 // var user = require('./routes/user');
 
@@ -35,11 +38,17 @@ app.set('view engine', 'handlebars');
 app.use(methodOverride());
 // app.use(express.cookieParser('moodi key'));
 app.use(session({
-    secret: 'moodi key',
-    resave: true,
-    saveUninitialized: true
+	secret: 'moodi_key',
+	resave: true,
+	saveUninitialized: true
 }));
 app.use(express.static(path.join(__dirname, 'assets')));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // development only
 // if ('development' == app.get('env')) {
@@ -53,9 +62,11 @@ app.get('/feedPage', feedPage.view);
 app.get('/details',details.feeddetails);
 app.get('/newPost',newPost.writePost);
 app.get('/emoji',emoji.emojiInfo);
+app.post('/login', login.processLogin);
+app.post('/signup', signup.processSignup);
 // Example route
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(app.get('port'), function() {
+	console.log('Express server listening on port ' + app.get('port'));
 });

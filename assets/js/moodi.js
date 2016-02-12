@@ -1,4 +1,6 @@
 'use strict';
+var devMode = true;
+var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -22,18 +24,27 @@ function initializePage() {
 			$('body').removeClass("modal-open-noscroll");
 		}
 	})
+
 	$('.modal').on('hide.bs.modal', function() {
 		$('body').removeClass("modal-open-noscroll");
 	});
+
+	if (myLocalStorage.get('login') === true) {
+		$('#loginButton').css('display', 'none');
+	} else {
+		$('#logoutButton').css('display', 'none');
+	}
+
+	$('#logoutButton').click(logout);
 
 	$('.text-story').on('keyup', convertToEmoji);
 }
 
 function convertToEmoji(e){
 	if(e.which == 32){ // Press space
-        var words = $(this).val().split(' ');
-        var lastWord = words[words.length - 2];
-        console.log("last word is: "+lastWord);
+		var words = $(this).val().split(' ');
+		var lastWord = words[words.length - 2];
+		console.log("last word is: "+lastWord);
 
         //var emojiLib = JSON.parse('../emoji.json');
         $.get( "emoji?word="+lastWord, function( data ) {
@@ -47,6 +58,18 @@ function convertToEmoji(e){
         
     }
 }
+
+var myLocalStorage = {
+	set: function(item, value) {
+		localStorage.setItem(item, JSON.stringify(value));
+	},
+	get: function(item) {
+		return JSON.parse(localStorage.getItem(item));
+	},
+	remove: function(item) {
+		localStorage.removeItem(item);
+	}
+};
 
 function reportErrors(errors) {
 	var msg = errors[0];
@@ -83,10 +106,30 @@ function validateLoginForm() {
 
 	if (errors.length > 0) {
 		reportErrors(errors);
-		return false;
+		return;
 	}
 
-	return true;
+	// talk to server
+	$.ajax({
+		type: 'POST',
+		url: serverUrl + '/login',
+		data: JSON.stringify({
+			email: email,
+			password: password
+		}),
+		contentType: 'application/json',
+		dataType: 'json',
+		success: function(data) {
+			if (data.result == true) {
+				myLocalStorage.set('login', true);
+				myLocalStorage.set('email', email);
+				window.location.reload(true);
+			} else {
+				errors[errors.length] = data.error;
+				reportErrors(errors);
+			}
+		}
+	});
 }
 
 function validateSignupForm() {
@@ -103,17 +146,44 @@ function validateSignupForm() {
 		errors[errors.length] = 'Password cannot be empty.';
 	}
 
-	if(password != confirmedPassword) {
+	if (password != confirmedPassword) {
 		errors[errors.length] = 'Please enter the same password.';
 	}
 
 	if (errors.length > 0) {
 		reportErrors(errors);
-		return false;
+		return;
 	}
 
-	return true;
+	// talk to server
+	$.ajax({
+		type: 'POST',
+		url: serverUrl + '/signup',
+		data: JSON.stringify({
+			email: email,
+			password: password
+		}),
+		contentType: 'application/json',
+		dataType: 'json',
+		success: function(data) {
+			if (data.result == true) {
+				myLocalStorage.set('login', true);
+				myLocalStorage.set('email', email);
+				window.location.reload(true);
+			} else {
+				errors[errors.length] = data.error;
+				reportErrors(errors);
+			}
+		}
+	});
 }
+
+function logout() {
+	myLocalStorage.remove('login');
+	myLocalStorage.remove('email');
+	window.location.reload(true);
+}
+
 
 /*
  *
@@ -123,47 +193,47 @@ function validateSignupForm() {
  * Web script: http://creative-tim.com
  * 
  */
-function showSignupForm() {
-	$('.loginBox').fadeOut('fast', function() {
-		$('.registerBox').fadeIn('fast');
-		$('.login-footer').fadeOut('fast', function() {
-			$('.register-footer').fadeIn('fast');
-		});
-		$('.modal-title').html('Signup with');
-	});
-	$('.error').removeClass('alert alert-danger').html('');
+ function showSignupForm() {
+ 	$('.loginBox').fadeOut('fast', function() {
+ 		$('.registerBox').fadeIn('fast');
+ 		$('.login-footer').fadeOut('fast', function() {
+ 			$('.register-footer').fadeIn('fast');
+ 		});
+ 		$('.modal-title').html('Signup with');
+ 	});
+ 	$('.error').removeClass('alert alert-danger').html('');
 
-}
+ }
 
-function showLoginForm() {
-	$('#loginModal .registerBox').fadeOut('fast', function() {
-		$('.loginBox').fadeIn('fast');
-		$('.register-footer').fadeOut('fast', function() {
-			$('.login-footer').fadeIn('fast');
-		});
+ function showLoginForm() {
+ 	$('#loginModal .registerBox').fadeOut('fast', function() {
+ 		$('.loginBox').fadeIn('fast');
+ 		$('.register-footer').fadeOut('fast', function() {
+ 			$('.login-footer').fadeIn('fast');
+ 		});
 
-		$('.modal-title').html('Login with');
-	});
-	$('.error').removeClass('alert alert-danger').html('');
-}
+ 		$('.modal-title').html('Login with');
+ 	});
+ 	$('.error').removeClass('alert alert-danger').html('');
+ }
 
-function openLoginModal() {
-	showLoginForm();
-	setTimeout(function() {
-		$('#loginModal').modal('show');
-	}, 230);
+ function openLoginModal() {
+ 	showLoginForm();
+ 	setTimeout(function() {
+ 		$('#loginModal').modal('show');
+ 	}, 230);
 
-}
+ }
 
-function openRegisterModal() {
-	showRegisterForm();
-	setTimeout(function() {
-		$('#loginModal').modal('show');
-	}, 230);
+ function openRegisterModal() {
+ 	showRegisterForm();
+ 	setTimeout(function() {
+ 		$('#loginModal').modal('show');
+ 	}, 230);
 
-}
+ }
 
-function loginAjax() {
+ function loginAjax() {
 	/*   Remove this comments when moving to server
 	$.post( "/login", function( data ) {
 	        if(data == 1){
@@ -172,8 +242,8 @@ function loginAjax() {
 	             shakeModal(); 
 	        }
 	    });
-	*/
+*/
 
-	/*   Simulate error message from the server   */
-	shakeModal();
+/*   Simulate error message from the server   */
+shakeModal();
 }
