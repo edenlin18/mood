@@ -1,4 +1,6 @@
 'use strict';
+var devMode = true;
+var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -22,10 +24,31 @@ function initializePage() {
 			$('body').removeClass("modal-open-noscroll");
 		}
 	})
+
 	$('.modal').on('hide.bs.modal', function() {
 		$('body').removeClass("modal-open-noscroll");
 	})
+
+	if (myLocalStorage.get('login') === true) {
+		$('#loginButton').css('display', 'none');
+	} else {
+		$('#logoutButton').css('display', 'none');
+	}
+
+	$('#logoutButton').click(logout);
 }
+
+var myLocalStorage = {
+	set: function(item, value) {
+		localStorage.setItem(item, JSON.stringify(value));
+	},
+	get: function(item) {
+		return JSON.parse(localStorage.getItem(item));
+	},
+	remove: function(item) {
+		localStorage.removeItem(item);
+	}
+};
 
 function reportErrors(errors) {
 	var msg = errors[0];
@@ -62,10 +85,30 @@ function validateLoginForm() {
 
 	if (errors.length > 0) {
 		reportErrors(errors);
-		return false;
+		return;
 	}
 
-	return true;
+	// talk to server
+	$.ajax({
+		type: 'POST',
+		url: serverUrl + '/login',
+		data: JSON.stringify({
+			email: email,
+			password: password
+		}),
+		contentType: 'application/json',
+		dataType: 'json',
+		success: function(data) {
+			if (data.result == true) {
+				myLocalStorage.set('login', true);
+				myLocalStorage.set('email', email);
+				window.location.reload(true);
+			} else {
+				errors[errors.length] = data.error;
+				reportErrors(errors);
+			}
+		}
+	});
 }
 
 function validateSignupForm() {
@@ -82,17 +125,44 @@ function validateSignupForm() {
 		errors[errors.length] = 'Password cannot be empty.';
 	}
 
-	if(password != confirmedPassword) {
+	if (password != confirmedPassword) {
 		errors[errors.length] = 'Please enter the same password.';
 	}
 
 	if (errors.length > 0) {
 		reportErrors(errors);
-		return false;
+		return;
 	}
 
-	return true;
+	// talk to server
+	$.ajax({
+		type: 'POST',
+		url: serverUrl + '/signup',
+		data: JSON.stringify({
+			email: email,
+			password: password
+		}),
+		contentType: 'application/json',
+		dataType: 'json',
+		success: function(data) {
+			if (data.result == true) {
+				myLocalStorage.set('login', true);
+				myLocalStorage.set('email', email);
+				window.location.reload(true);
+			} else {
+				errors[errors.length] = data.error;
+				reportErrors(errors);
+			}
+		}
+	});
 }
+
+function logout() {
+	myLocalStorage.remove('login');
+	myLocalStorage.remove('email');
+	window.location.reload(true);
+}
+
 
 /*
  *
