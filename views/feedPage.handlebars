@@ -35,19 +35,38 @@
 <body id="page-top" class="index">
 	<!-- Navigation -->
     {{> navigation}}
-    
-	<section id="feedSection">
-		<div class="container" style="background-image:url({{imgName}}); background-attachment: fixed; width:100%; height:1080px">
-			{{#each feeds}}
-			    <div class="feeds" id="{{id}}">
-			      {{> feed title=title content=content id=id mood=mood}}
-			    </div>
-			{{/each}}
-		</div>	
-	</section>
-	<div class="container" id="add-post-button">
-		<a href="/newPost?mood={{mood}}" class="btn btn-primary btn-lg active" role="button" style="float:right;">Add Post</a>
-	</div>
+
+    <section id="feedSection">
+        <div class="container">
+          <div class="page-header">
+            <h1 id="timeline">Timeline</h1>
+          </div>
+
+          <ul class="timeline">
+            {{#each feeds}}
+                <li class= "timeline-feed">
+                    {{> feed title=title content=content id=id mood=mood}}
+                </li>
+            {{/each}}
+            
+          </ul>
+        </div>
+
+        <script type="text/javascript">
+            var el = document.getElementsByClassName("timeline-feed");
+            console.log(el);
+            for(i=0; i<el.length; i++){
+                var random_num = Math.random();
+                if(random_num > 0.5){
+                    el[i].className += " timeline-inverted";    
+                }
+            }
+        </script>
+
+        <div class="container" id="add-post-button">
+                <a href="/newPost?mood={{mood}}" class="btn btn-primary btn-lg active" role="button" style="float:right;">Add Post</a>
+        </div>
+    </section>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

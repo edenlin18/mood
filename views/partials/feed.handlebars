@@ -1,5 +1,12 @@
-<img src="images/happy.png">
-<a href="/details?mood={{mood}}&id={{id}}">
-	<h1>{{title}}</h1>
-</a>
-<p>{{content}}</p>
+<div class="timeline-badge"><img src="img/portfolio/{{mood}}.png" class="img-responsive mood-img" alt=""></div>
+<div class="timeline-panel">
+	<div class="timeline-heading">
+		<a href="/details?mood={{mood}}&id={{id}}">
+			<h4 class="timeline-title">{{title}}</h4>
+		</a>
+	  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+	</div>
+	<div class="timeline-body">
+	  <p>{{content}}</p>
+	</div>
+</div>
