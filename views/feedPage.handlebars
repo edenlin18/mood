@@ -39,7 +39,7 @@
     <section id="feedSection">
         <div class="container">
 
-        <a href="/newPost?mood={{mood}}">
+        <a href="" class="add-post-btn" id="{{mood}}Temp" data-toggle="modal" data-target="#newPostModal">
         <span class="fa-stack fa-3x">
             <i class="fa fa-circle fa-stack-2x icon-background"></i>
             <i class="fa fa-pencil fa-stack-1x"></i>
@@ -53,7 +53,18 @@
           <ul class="timeline">
             {{#each feeds}}
                 <li class= "timeline-feed">
-                    {{> feed title=title content=content id=id mood=mood}}
+                    <div class="timeline-badge" ><img src="img/moods/{{mood}}.png" class="img-responsive mood-img" alt=""></div>
+                    <div class="timeline-panel" style="background:white;">
+                        <div class="timeline-heading">
+                            <!-- <a href="/details?mood={{mood}}&id={{id}}"> -->
+                                <h4 class="timeline-title">{{title}}</h4>
+                            <!-- </a> -->
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            {{{content}}}
+                        </div>
+                    </div>
                 </li>
             {{/each}}
             
@@ -71,6 +82,42 @@
             }
         </script>
     </section>
+
+<!-- New Post Form -->
+<div class="modal fade" id="newPostModal">
+      <div class="modal-dialog login animated">
+          <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">New Post...</h4>
+            </div>
+            <div class="modal-body">  
+                <div class="box">
+                     <div class="content">
+                        <div class="error"></div>
+                        <div class="form loginBox">
+                            <form name="newPostForm" accept-charset="UTF-8">
+                                <h4>Title</h4>
+                                <div class="form-group">
+                                    <textarea class="form-control newPost-title" rows="1" style="resize: none;"></textarea>
+                                </div>
+                                <h4>Emoji Story:</h4>
+                                <div class="form-control emoji-story"></div>
+                                <h4>Story:</h4>
+                                <div class="form-group">
+                                    <textarea class="form-control text-story" rows="10" style="resize: none;"></textarea>
+                                </div>
+                                <input style="display: none;" name="mood" value="{{mood}}"></input>
+                                <button type="submit" class="btn btn-default" onClick="addPost()">Post</button>
+                                <button type="submit" class="btn btn-default" class="close" data-dismiss="modal" onClick="cancelPost()">Cancel</button>
+                            </form>
+                        </div>
+                     </div>
+                </div>
+            </div>    
+          </div>
+      </div>
+  </div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

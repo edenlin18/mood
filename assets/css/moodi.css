@@ -76,6 +76,12 @@ body {
     }
 }
 
+.add-post-btn {
+    position: absolute;
+    top: 12%;
+    right: 1%;
+}
+
 /*
  *
  * login-register modal

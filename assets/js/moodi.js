@@ -37,6 +37,18 @@ function initializePage() {
 
 	$('.text-story').on('keyup', convertToEmoji);
 
+	$('.add-post-btn').on('click', function(e) {
+		if (myLocalStorage.get('login') !== true) {
+			e.stopPropagation();
+			e.preventDefault();
+			alert('Please Login or Signup First!');
+		}
+	});
+
+	if ($('#allMoodTemp').length != 0) {
+		$('#allMoodTemp').hide();
+	}
+
 	// $(".mood").mouseover(function() {
 	// 	$(this).effect({
 	// 		effect: 'shake',
@@ -74,22 +86,26 @@ function initializePage() {
 }
 
 function convertToEmoji(e) {
-	if (e.which == 32) { // Press space
-		var words = $(this).val().split(' ');
-		var lastWord = words[words.length - 2];
-		console.log("last word is: " + lastWord);
+	// if (e.which == 32) { // Press space
+	// 	var words = $(this).val().split(' ');
+	// 	var lastWord = words[words.length - 2];
+	// 	console.log("last word is: " + lastWord);
 
-		//var emojiLib = JSON.parse('../emoji.json');
-		$.get("emoji?word=" + lastWord, function(data) {
-			console.log(data);
-			if (data == "") {
-				$('.emoji-story').append(lastWord + " ");
-			} else {
-				$('.emoji-story').append(data);
-			}
-		});
+	// 	// var emojiLib = JSON.parse('../emoji.json');
+	// 	$.get("emoji?word=" + lastWord, function(data) {
+	// 		console.log(data);
+	// 		if (data == "") {
+	// 			$('.emoji-story').append(lastWord + " ");
+	// 		} else {
+	// 			$('.emoji-story').append(data);
+	// 		}
+	// 	});
+	// }
 
-	}
+	$.get("emoji?word=" + $(this).val(), function(data) {
+		console.log(data);
+		$('.emoji-story').html(data);
+	});
 }
 
 var myLocalStorage = {
@@ -217,6 +233,34 @@ function logout() {
 	window.location.reload(true);
 }
 
+var counter = 0;
+
+function addPost() {
+	var mood = document.newPostForm.mood.value; // $(".post").attr('id');
+	var emojiStoryHtml = $(".emoji-story").html();
+	var title = $(".newPost-title").val();
+	$.ajax({
+		type: 'POST',
+		url: serverUrl + '/addPost',
+		data: JSON.stringify({
+			title: title,
+			content: emojiStoryHtml,
+			mood: mood,
+			id: mood + counter
+		}),
+		contentType: 'application/json',
+		dataType: 'json',
+		success: function(data) {
+			counter++;
+			window.location.reload(true);
+		}
+	});
+}
+
+function cancelPost() {
+	$(".emoji-story").html('');
+}
+
 /*
  *
  * login-register modal
@@ -278,28 +322,4 @@ function loginAjax() {
 
 	/*   Simulate error message from the server   */
 	shakeModal();
-}
-
-var counter = 0;
-
-function addPost(){
-	var mood = $(".post").attr('id');
-	var emojiStoryHtml = $(".emoji-story").html();
-	var title = $(".newPost-title").val();
-	$.ajax({
-		type: 'POST',
-		url: serverUrl + '/addPost',
-		data: JSON.stringify({
-			title: title,
-			content: emojiStoryHtml,
-			mood: mood,
-			id: mood+counter
-		}),
-		contentType: 'application/json',
-		dataType: 'json',
-		success: function(data) {
-			console.log(data.result);
-			counter++;
-		}
-	});
 }

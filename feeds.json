@@ -22,32 +22,7 @@
 			"content" : "testing feed",
 			"mood":"happy",
 			"id":"happy4"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy5"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy6"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy7"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy8"
 		}],
-
 		"mad" :[{
 			"title":"test",
 			"content" : "testing feed",
@@ -71,30 +46,6 @@
 			"content" : "testing feed",
 			"mood":"mad",
 			"id":"mad4"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad5"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad6"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad7"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad8"
 		}],
 		"lovely" :[{
 			"title":"test",
@@ -119,30 +70,6 @@
 			"content" : "testing feed",
 			"mood":"lovely",
 			"id":"lovely4"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely5"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely6"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely7"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely8"
 		}],
 		"neutral" :[{
 			"title":"test",
@@ -167,30 +94,6 @@
 			"content" : "testing feed",
 			"mood":"neutral",
 			"id":"neutral4"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral5"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral6"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral7"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral8"
 		}],
 		"scared" :[{
 			"title":"test",
@@ -215,30 +118,6 @@
 			"content" : "testing feed",
 			"mood":"scared",
 			"id":"scared4"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared5"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared6"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared7"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared8"
 		}],
 		"sad" :[{
 			"title":"test",
@@ -263,29 +142,5 @@
 			"content" : "testing feed",
 			"mood":"sad",
 			"id":"sad4"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad5"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad6"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad7"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad8"
 		}]
 }
