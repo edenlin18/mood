@@ -39,13 +39,13 @@
     <section id="feedSection">
         <div class="container">
 
-        <h4 class="btn btn-primary btn-lg" id="login-to-post-sign" style="float:right;" data-toggle="modal" data-target="#loginModal">You must login to post!</h4>
-        <a href="/newPost?mood={{mood}}" id="add-post-button" class="btn btn-primary btn-lg active" role="button" style="float:right;">Add Post</a>
-
+        <a href="/newPost?mood={{mood}}">
         <span class="fa-stack fa-3x">
             <i class="fa fa-circle fa-stack-2x icon-background"></i>
             <i class="fa fa-pencil fa-stack-1x"></i>
         </span>
+        </a>
+
           <div class="page-header">
             <h1 id="timeline">Timeline</h1>
           </div>
@@ -70,10 +70,6 @@
                 }
             }
         </script>
-
-        <div class="container" id="add-post-button">
-                <a href="/newPost?mood={{mood}}" class="btn btn-primary btn-lg active" role="button" style="float:right;">Add Post</a>
-        </div>
     </section>
 
     <!-- jQuery -->
