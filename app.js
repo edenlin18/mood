@@ -8,7 +8,6 @@ var path = require('path');
 var bodyParser = require('body-parser')
 
 var index = require('./routes/index');
-var about = require('./routes/about');
 var feedPage = require('./routes/feedPage');
 var details = require('./routes/details');
 var newPost = require('./routes/newPost');
@@ -57,7 +56,6 @@ app.use(bodyParser.json())
 
 // Add routes here
 app.get('/', index.view);
-app.get('/about', about.view);
 app.get('/feedPage', feedPage.view);
 app.get('/details',details.feeddetails);
 app.get('/newPost',newPost.writePost);

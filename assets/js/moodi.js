@@ -1,5 +1,5 @@
 'use strict';
-var devMode = false;
+var devMode = true;
 var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
@@ -30,15 +30,47 @@ function initializePage() {
 	});
 
 	if (myLocalStorage.get('login') === true) {
-		$('#loginButton').css('display', 'none');
-	} else {
-		$('#logoutButton').css('display', 'none');
-		$('#add-post-button').css('display', 'none');
+		$('#loginButton').replaceWith('<a href="" id="logoutButton">Logout</a>');
 	}
 
 	$('#logoutButton').click(logout);
 
 	$('.text-story').on('keyup', convertToEmoji);
+
+	// $(".mood").mouseover(function() {
+	// 	$(this).effect({
+	// 		effect: 'shake',
+	// 		distance: 10
+	// 	});
+
+	// 	// var $this = $(this);
+	// 	// var position = $this.position();
+	// 	// var width = $this.width();
+	// 	// var height = $this.height();
+
+	// 	// var x_position = position.left + width / 2;
+	// 	// var y_position = position.top + height / 2;
+
+	// 	// $('<div class="test">test</div>').css({
+	// 	// 	position: "absolute",
+	// 	// 	marginLeft: x_position,
+	// 	// 	marginTop: y_position,
+	// 	// 	top: 0,
+	// 	// 	left: 0
+	// 	// }).appendTo(this);
+
+	// 	// $(this).append('<div class="test">test</div>');
+	// });
+
+	// $('.mood').mouseout(function() {
+	// 	$('div').remove('.test');
+	// });
+
+	$(document).keydown(function(e) {
+		if (e.which === 13) {
+			e.preventDefault();
+		}
+	});
 }
 
 function convertToEmoji(e) {
@@ -184,7 +216,6 @@ function logout() {
 	myLocalStorage.remove('email');
 	window.location.reload(true);
 }
-
 
 /*
  *
