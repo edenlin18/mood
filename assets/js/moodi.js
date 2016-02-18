@@ -279,3 +279,27 @@ function loginAjax() {
 	/*   Simulate error message from the server   */
 	shakeModal();
 }
+
+var counter = 0;
+
+function addPost(){
+	var mood = $(".post").attr('id');
+	var emojiStoryHtml = $(".emoji-story").html();
+	var title = $(".newPost-title").val();
+	$.ajax({
+		type: 'POST',
+		url: serverUrl + '/addPost',
+		data: JSON.stringify({
+			title: title,
+			content: emojiStoryHtml,
+			mood: mood,
+			id: mood+counter
+		}),
+		contentType: 'application/json',
+		dataType: 'json',
+		success: function(data) {
+			console.log(data.result);
+			counter++;
+		}
+	});
+}

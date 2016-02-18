@@ -5,7 +5,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var feedPage = require('./routes/feedPage');
@@ -62,6 +62,7 @@ app.get('/newPost',newPost.writePost);
 app.get('/emoji',emoji.emojiInfo);
 app.post('/login', login.processLogin);
 app.post('/signup', signup.processSignup);
+app.post('/addPost', newPost.addPost);
 // Example route
 // app.get('/users', user.list);
 
