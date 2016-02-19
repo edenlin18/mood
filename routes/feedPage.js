@@ -5,9 +5,9 @@ var feeds = require('../feeds.json');
 
 var compareTimeStamp = function(a, b){
 	if (a.time < b.time)
-    return -1;
+    return 1;
 	else if (a.time > b.time)
-	  return 1;
+	  return -1;
 	else 
 	  return 0;
 }

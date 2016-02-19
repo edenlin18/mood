@@ -1,10 +1,10 @@
 {
-  "name": "IntroHCI",
+  "name": "moodi",
   "version": "0.0.1",
   "author": "Intro HCI Staff",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "git+https://github.com/IntroHCI/lab4.git"
   },
   "license": "MIT",
   "private": true,
@@ -25,5 +25,11 @@
   },
   "engines": {
     "node": "0.10.x"
-  }
+  },
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/IntroHCI/lab4/issues"
+  },
+  "homepage": "https://github.com/IntroHCI/lab4#readme",
+  "main": "app.js"
 }

@@ -45,8 +45,8 @@ function initializePage() {
 		}
 	});
 
-	if ($('#allMoodTemp').length != 0) {
-		$('#allMoodTemp').hide();
+	if ($('#allTemp').length === 0) {
+		$('.add-post-btn').show();
 	}
 
 	// $(".mood").mouseover(function() {
@@ -172,6 +172,7 @@ function validateLoginForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
+				myLocalStorage.set('username', "demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
@@ -218,6 +219,7 @@ function validateSignupForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
+				mylocalStorage.set('username', "demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
@@ -230,6 +232,7 @@ function validateSignupForm() {
 function logout() {
 	myLocalStorage.remove('login');
 	myLocalStorage.remove('email');
+	myLocalStorage.remove('username');
 	window.location.reload(true);
 }
 
@@ -239,14 +242,17 @@ function addPost() {
 	var mood = document.newPostForm.mood.value; // $(".post").attr('id');
 	var emojiStoryHtml = $(".emoji-story").html();
 	var title = $(".newPost-title").val();
+
 	var timestamp = new Date().getTime() / 1000;
+	var author = myLocalStorage.get('username');
 
 	var request = {
 		title: title,
 		content: emojiStoryHtml,
 		mood: mood,
 		id: mood + counter,
-		time: timestamp
+		time: timestamp,
+		author: author
 	}
 
 	var random_num = Math.random();
