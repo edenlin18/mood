@@ -316,6 +316,7 @@ body {
 
 .emoji-story{
     height: 300px;
+    overflow: auto;
     background: #F5F5F5;
 }
 
