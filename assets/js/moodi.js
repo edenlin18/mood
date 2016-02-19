@@ -1,5 +1,5 @@
 'use strict';
-var devMode = true;
+var devMode = false;
 var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
