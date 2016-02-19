@@ -52,35 +52,54 @@
 
           <ul class="timeline">
             {{#each feeds}}
-                <li class= "timeline-feed">
+                <li id= "timeline-feed{{id}}">
                     <div class="timeline-badge" ><img src="img/moods/{{mood}}.png" class="img-responsive mood-img" alt=""></div>
                     <div class="timeline-panel" style="background:white;">
                         <div class="timeline-heading">
                             <!-- <a href="/details?mood={{mood}}&id={{id}}"> -->
                                 <h4 class="timeline-title">{{title}}</h4>
                             <!-- </a> -->
-                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago by {{author}}</small></p>
+                          <p><small class="text-muted" id="time{{id}}"><i class="glyphicon glyphicon-time"></i></small></p>
                         </div>
                         <div class="timeline-body">
                             <div>{{{content}}}</div>
                         </div>
                     </div>
                 </li>
+                {{#if time}}
+                    <script type="text/javascript">
+                        var date = new Date({{time}}*1000);
+                        console.log(date);
+
+                        var year = date.getFullYear();
+                        var month = date.getMonth();
+                        var d = date.getDate();
+                        // Hours part from the timestamp
+                        var hours = date.getHours();
+                        // Minutes part from the timestamp
+                        var minutes = "0" + date.getMinutes();
+                        // Seconds part from the timestamp
+                        var seconds = "0" + date.getSeconds();
+
+                        // Will display time in 10:30:23 format
+                        var formattedTime = year+'-'+month+'-'+d+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+                        var el = document.getElementById("time{{id}}");
+                        el.innerHTML += formattedTime + " by {{author}}";
+                    </script>
+                {{/if}}
+                {{#unless left}}
+                    <script type="text/javascript">
+                        var el = document.getElementById("timeline-feed{{id}}");
+                        console.log(el);
+                        el.className += " timeline-inverted";    
+                    </script>
+                {{/unless}}
             {{/each}}
             
           </ul>
         </div>
 
-        <script type="text/javascript">
-            var el = document.getElementsByClassName("timeline-feed");
-            console.log(el);
-            for(i=0; i<el.length; i++){
-                var random_num = Math.random();
-                if(random_num > 0.5){
-                    el[i].className += " timeline-inverted";    
-                }
-            }
-        </script>
     </section>
 
 <!-- New Post Form -->

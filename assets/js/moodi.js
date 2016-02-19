@@ -45,8 +45,8 @@ function initializePage() {
 		}
 	});
 
-	if ($('#allMoodTemp').length != 0) {
-		$('#allMoodTemp').hide();
+	if ($('#allTemp').length === 0) {
+		$('.add-post-btn').show();
 	}
 
 	// $(".mood").mouseover(function() {
@@ -242,18 +242,29 @@ function addPost() {
 	var mood = document.newPostForm.mood.value; // $(".post").attr('id');
 	var emojiStoryHtml = $(".emoji-story").html();
 	var title = $(".newPost-title").val();
+
+	var timestamp = new Date().getTime() / 1000;
 	var author = myLocalStorage.get('username');
+
+	var request = {
+		title: title,
+		content: emojiStoryHtml,
+		mood: mood,
+		id: mood + counter,
+		time: timestamp,
+		author: author
+	}
+
+	var random_num = Math.random();
+
+	if(random_num > 0.5){
+		request.left = true;
+	}
 
 	$.ajax({
 		type: 'POST',
 		url: serverUrl + '/addPost',
-		data: JSON.stringify({
-			title: title,
-			content: emojiStoryHtml,
-			mood: mood,
-			id: mood + counter,
-			author: author
-		}),
+		data: JSON.stringify(request),
 		contentType: 'application/json',
 		dataType: 'json',
 		success: function(data) {

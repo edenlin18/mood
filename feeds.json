@@ -4,6 +4,8 @@
 			"content" : "testing feed",
 			"mood":"happy",
 			"id":"happy1",
+			"left": "true",
+			"time": "1455375444",
 			"author":"Eden"
 		},
 		{
@@ -11,6 +13,7 @@
 			"content" : "testing feed",
 			"mood":"happy",
 			"id":"happy2",
+			"time": "1455275444",
 			"author":"Elmer"
 		},
 		{
@@ -18,6 +21,7 @@
 			"content" : "testing feed",
 			"mood":"happy",
 			"id":"happy3",
+			"time": "1455175444",
 			"author":"Brian"
 		},
 		{
@@ -25,6 +29,8 @@
 			"content" : "testing feed",
 			"mood":"happy",
 			"id":"happy4",
+			"left": "true",
+			"time": "1455575444",
 			"author":"Elmer"
 		}],
 		"mad" :[{
@@ -32,6 +38,7 @@
 			"content" : "testing feed",
 			"mood":"mad",
 			"id":"mad1",
+			"time": "1455075444",
 			"author":"Elmer"
 		},
 		{
@@ -39,6 +46,8 @@
 			"content" : "testing feed",
 			"mood":"mad",
 			"id":"mad2",
+			"left": "true",
+			"time": "1455475444",
 			"author":"Brian"
 		},
 		{
@@ -46,6 +55,8 @@
 			"content" : "testing feed",
 			"mood":"mad",
 			"id":"mad3",
+			"left": "true",
+			"time": "1455375444",
 			"author":"Eden"
 		},
 		{
@@ -53,6 +64,7 @@
 			"content" : "testing feed",
 			"mood":"mad",
 			"id":"mad4",
+			"time": "1455575444",
 			"author":"Kevin"
 		}],
 		"lovely" :[{
@@ -60,6 +72,7 @@
 			"content" : "testing feed",
 			"mood":"lovely",
 			"id":"lovely1",
+			"time": "1455175444",
 			"author":"Brian"
 		},
 		{
@@ -67,6 +80,7 @@
 			"content" : "testing feed",
 			"mood":"lovely",
 			"id":"lovely2",
+			"time": "1455675444",
 			"author":"Elmer"
 		},
 		{
@@ -74,6 +88,8 @@
 			"content" : "testing feed",
 			"mood":"lovely",
 			"id":"lovely3",
+			"left": "true",
+			"time": "1455575444",
 			"author":"Eden"
 		},
 		{
@@ -81,6 +97,8 @@
 			"content" : "testing feed",
 			"mood":"lovely",
 			"id":"lovely4",
+			"left": "true",
+			"time": "1455475444",
 			"author":"Eden"
 		}],
 		"neutral" :[{
@@ -88,6 +106,8 @@
 			"content" : "testing feed",
 			"mood":"neutral",
 			"id":"neutral1",
+			"left": "true",
+			"time": "1455675444",
 			"author":"Elmer"
 		},
 		{
@@ -95,6 +115,7 @@
 			"content" : "testing feed",
 			"mood":"neutral",
 			"id":"neutral2",
+			"time": "1455175444",
 			"author":"Brian"
 		},
 		{
@@ -102,6 +123,8 @@
 			"content" : "testing feed",
 			"mood":"neutral",
 			"id":"neutral3",
+			"left": "true",
+			"time": "1455375444",
 			"author":"Eden"
 		},
 		{
@@ -109,6 +132,7 @@
 			"content" : "testing feed",
 			"mood":"neutral",
 			"id":"neutral4",
+			"time": "1455575444",
 			"author":"Brian"
 		}],
 		"scared" :[{
@@ -116,6 +140,8 @@
 			"content" : "testing feed",
 			"mood":"scared",
 			"id":"scared1",
+			"left": "true",
+			"time": "1455485444",
 			"author":"Brian"
 		},
 		{
@@ -123,6 +149,7 @@
 			"content" : "testing feed",
 			"mood":"scared",
 			"id":"scared2",
+			"time": "1455655444",
 			"author":"Elmer"
 		},
 		{
@@ -130,6 +157,7 @@
 			"content" : "testing feed",
 			"mood":"scared",
 			"id":"scared3",
+			"time": "1455175444",
 			"author":"Elmer"
 		},
 		{
@@ -137,6 +165,8 @@
 			"content" : "testing feed",
 			"mood":"scared",
 			"id":"scared4",
+			"left": "true",
+			"time": "1455455444",
 			"author":"Eden"
 		}],
 		"sad" :[{
@@ -144,6 +174,7 @@
 			"content" : "testing feed",
 			"mood":"sad",
 			"id":"sad1",
+			"time": "1454475444",
 			"author":"Elmer"
 		},
 		{
@@ -151,6 +182,8 @@
 			"content" : "testing feed",
 			"mood":"sad",
 			"id":"sad2",
+			"left": "true",
+			"time": "1455395444",
 			"author":"Brian"
 		},
 		{
@@ -158,6 +191,8 @@
 			"content" : "testing feed",
 			"mood":"sad",
 			"id":"sad3",
+			"left": "true",
+			"time": "1455735444",
 			"author":"Brian"
 		},
 		{
@@ -165,6 +200,7 @@
 			"content" : "testing feed",
 			"mood":"sad",
 			"id":"sad4",
+			"time": "1455095444",
 			"author":"Eden"
 		}]
 }
