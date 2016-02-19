@@ -85,7 +85,7 @@
                         var formattedTime = year+'-'+month+'-'+d+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
                         var el = document.getElementById("time{{id}}");
-                        el.innerHTML += formattedTime + " by {{author}}";
+                        el.innerHTML += ' ' + formattedTime + " by {{author}}";
                     </script>
                 {{/if}}
                 {{#unless left}}
@@ -118,17 +118,18 @@
                             <form name="newPostForm" accept-charset="UTF-8">
                                 <h4>Title</h4>
                                 <div class="form-group">
-                                    <textarea class="form-control newPost-title" rows="1" style="resize: none;"></textarea>
+                                    <textarea class="form-control newPost-title" rows="1" style="resize: none;" name="title"></textarea>
                                 </div>
                                 <h4>Emoji Story:</h4>
                                 <div class="form-control emoji-story"></div>
                                 <h4>Story:</h4>
                                 <div class="form-group">
-                                    <textarea class="form-control text-story" rows="10" style="resize: none;"></textarea>
+                                    <textarea class="form-control text-story" rows="10" style="resize: none;" name="content"></textarea>
                                 </div>
                                 <input style="display: none;" name="mood" value="{{mood}}"></input>
-                                <button type="submit" class="btn btn-default" onClick="addPost()">Post</button>
-                                <button type="submit" class="btn btn-default" class="close" data-dismiss="modal" onClick="cancelPost()">Cancel</button>
+
+                                <button type="button" class="btn btn-default" onClick="addPost()">Post</button>
+                                <button type="button" class="btn btn-default" class="close" data-dismiss="modal" onClick="cancelPost()">Cancel</button>
                             </form>
                         </div>
                      </div>

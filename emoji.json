@@ -1,8 +1,44 @@
 {
-	"happy" :["img/emoji/Emoji-Smiley/Emoji-Smiley-01.png",
+	"happy": ["img/emoji/Emoji-Smiley/Emoji-Smiley-01.png",
 		"img/emoji/Emoji-Smiley/Emoji-Smiley-02.png",
 		"img/emoji/Emoji-Smiley/Emoji-Smiley-03.png",
 		"img/emoji/Emoji-Smiley/Emoji-Smiley-04.png",
 		"img/emoji/Emoji-Smiley/Emoji-Smiley-05.png",
-		"img/emoji/Emoji-Smiley/Emoji-Smiley-06.png"]
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-06.png"
+	],
+	"mad": ["img/emoji/Emoji-Smiley/Emoji-Smiley-35.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-49.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-84.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-82.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-34.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-36.png"
+	],
+	"lovely": ["img/emoji/Emoji-Smiley/Emoji-Smiley-07.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-08.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-177.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-180.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-131.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-09.png"
+	],
+	"neutral": ["img/emoji/Emoji-Smiley/Emoji-Smiley-102.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-15.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-52.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-51.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-55.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-54.png"
+	],
+	"scared": ["img/emoji/Emoji-Smiley/Emoji-Smiley-43.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-44.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-33.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-87.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-79.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-47.png"
+	],
+	"sad": ["img/emoji/Emoji-Smiley/Emoji-Smiley-22.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-80.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-23.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-97.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-24.png",
+		"img/emoji/Emoji-Smiley/Emoji-Smiley-21.png"
+	]
 }

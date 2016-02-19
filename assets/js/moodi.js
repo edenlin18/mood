@@ -1,5 +1,5 @@
 'use strict';
-var devMode = false;
+var devMode = true;
 var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
@@ -102,7 +102,7 @@ function convertToEmoji(e) {
 	// 	});
 	// }
 
-	$.get("emoji?word=" + $(this).val(), function(data) {
+	$.get("emoji?word=" + $(this).val() + '&mood=' + document.newPostForm.mood.value, function(data) {
 		console.log(data);
 		$('.emoji-story').html(data);
 	});
@@ -172,7 +172,7 @@ function validateLoginForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
-				myLocalStorage.set('username', "demo");
+				myLocalStorage.set('username', "Demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
@@ -219,7 +219,7 @@ function validateSignupForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
-				mylocalStorage.set('username', "demo");
+				mylocalStorage.set('username', "Demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
@@ -236,21 +236,35 @@ function logout() {
 	window.location.reload(true);
 }
 
-var counter = 0;
-
 function addPost() {
 	var mood = document.newPostForm.mood.value; // $(".post").attr('id');
 	var emojiStoryHtml = $(".emoji-story").html();
-	var title = $(".newPost-title").val();
+	var title = document.newPostForm.title.value;
+	var content = document.newPostForm.content.value;
 
 	var timestamp = new Date().getTime() / 1000;
 	var author = myLocalStorage.get('username');
 
+	var errors = [];
+
+	if (title == '') {
+		errors[errors.length] = 'You must have a title for your post.';
+	}
+
+	if (content == '') {
+		errors[errors.length] = 'You must have some contents for your post.';
+	}
+
+	if (errors.length > 0) {
+		reportErrors(errors);
+		return;
+	}
+
 	var request = {
 		title: title,
-		content: emojiStoryHtml,
+		content: content,
 		mood: mood,
-		id: mood + counter,
+		id: mood,
 		time: timestamp,
 		author: author
 	}
@@ -268,7 +282,6 @@ function addPost() {
 		contentType: 'application/json',
 		dataType: 'json',
 		success: function(data) {
-			counter++;
 			window.location.reload(true);
 		}
 	});

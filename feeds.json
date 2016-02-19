@@ -1,206 +1,188 @@
 {
-	"happy" :[{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy1",
-			"left": "true",
-			"time": "1455375444",
-			"author":"Eden"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy2",
-			"time": "1455275444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy3",
-			"time": "1455175444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"happy",
-			"id":"happy4",
-			"left": "true",
-			"time": "1455575444",
-			"author":"Elmer"
-		}],
-		"mad" :[{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad1",
-			"time": "1455075444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad2",
-			"left": "true",
-			"time": "1455475444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad3",
-			"left": "true",
-			"time": "1455375444",
-			"author":"Eden"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"mad",
-			"id":"mad4",
-			"time": "1455575444",
-			"author":"Kevin"
-		}],
-		"lovely" :[{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely1",
-			"time": "1455175444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely2",
-			"time": "1455675444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely3",
-			"left": "true",
-			"time": "1455575444",
-			"author":"Eden"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"lovely",
-			"id":"lovely4",
-			"left": "true",
-			"time": "1455475444",
-			"author":"Eden"
-		}],
-		"neutral" :[{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral1",
-			"left": "true",
-			"time": "1455675444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral2",
-			"time": "1455175444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral3",
-			"left": "true",
-			"time": "1455375444",
-			"author":"Eden"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"neutral",
-			"id":"neutral4",
-			"time": "1455575444",
-			"author":"Brian"
-		}],
-		"scared" :[{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared1",
-			"left": "true",
-			"time": "1455485444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared2",
-			"time": "1455655444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared3",
-			"time": "1455175444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"scared",
-			"id":"scared4",
-			"left": "true",
-			"time": "1455455444",
-			"author":"Eden"
-		}],
-		"sad" :[{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad1",
-			"time": "1454475444",
-			"author":"Elmer"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad2",
-			"left": "true",
-			"time": "1455395444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad3",
-			"left": "true",
-			"time": "1455735444",
-			"author":"Brian"
-		},
-		{
-			"title":"test",
-			"content" : "testing feed",
-			"mood":"sad",
-			"id":"sad4",
-			"time": "1455095444",
-			"author":"Eden"
-		}]
+	"happy": [{
+		"title": "Lakers Game!!",
+		"content": "testing feed testing feed testing feed testing feed",
+		"mood": "happy",
+		"id": "happy1",
+		"left": "true",
+		"time": "1455375444",
+		"author": "Eden"
+	}, {
+		"title": "Hapy Birthday Vivian:D",
+		"content": "testing feed testing feed testing feed",
+		"mood": "happy",
+		"id": "happy2",
+		"time": "1455275444",
+		"author": "Elmer"
+	}, {
+		"title": "Graduation",
+		"content": "testing feed",
+		"mood": "happy",
+		"id": "happy3",
+		"time": "1455175444",
+		"author": "Brian"
+	}, {
+		"title": "OMG! I just saw Kobe Bryant!!!!!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "happy",
+		"id": "happy4",
+		"left": "true",
+		"time": "1455575444",
+		"author": "Elmer"
+	}],
+	"mad": [{
+		"title": "WHY CAN'T PEOPLE MIND THEIR OWN BUSINESS?",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "mad",
+		"id": "mad1",
+		"time": "1455075444",
+		"author": "Elmer"
+	}, {
+		"title": "My dad just lock me out of my computer!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "mad",
+		"id": "mad2",
+		"left": "true",
+		"time": "1455475444",
+		"author": "Brian"
+	}, {
+		"title": "FML...two tickets in a day???",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "mad",
+		"id": "mad3",
+		"left": "true",
+		"time": "1455375444",
+		"author": "Eden"
+	}, {
+		"title": "Just had a fight with my sister!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "mad",
+		"id": "mad4",
+		"time": "1455575444",
+		"author": "Kevin"
+	}],
+	"lovely": [{
+		"title": "I am the luckiest girl in the world!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "lovely",
+		"id": "lovely1",
+		"time": "1455175444",
+		"author": "Brian"
+	}, {
+		"title": "She said YES!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "lovely",
+		"id": "lovely2",
+		"time": "1455675444",
+		"author": "Elmer"
+	}, {
+		"title": "I just got proposed:DDDDD",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "lovely",
+		"id": "lovely3",
+		"left": "true",
+		"time": "1455575444",
+		"author": "Eden"
+	}, {
+		"title": "Best Valentine's Day ever!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "lovely",
+		"id": "lovely4",
+		"left": "true",
+		"time": "1455475444",
+		"author": "Eden"
+	}],
+	"neutral": [{
+		"title": "Feeling Alright~",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "neutral",
+		"id": "neutral1",
+		"left": "true",
+		"time": "1455675444",
+		"author": "Elmer"
+	}, {
+		"title": "Game all day~~",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "neutral",
+		"id": "neutral2",
+		"time": "1455175444",
+		"author": "Brian"
+	}, {
+		"title": "Nothing to do-.-",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "neutral",
+		"id": "neutral3",
+		"left": "true",
+		"time": "1455375444",
+		"author": "Eden"
+	}, {
+		"title": "Just had an okay dinner, meh..",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "neutral",
+		"id": "neutral4",
+		"time": "1455575444",
+		"author": "Brian"
+	}],
+	"scared": [{
+		"title": "OMG, my cat went nutzzzzz!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "scared",
+		"id": "scared1",
+		"left": "true",
+		"time": "1455485444",
+		"author": "Brian"
+	}, {
+		"title": "HELP!! I think someone is outside my house!!!",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "scared",
+		"id": "scared2",
+		"time": "1455655444",
+		"author": "Elmer"
+	}, {
+		"title": "Almost got hit by a car:0",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "scared",
+		"id": "scared3",
+		"time": "1455175444",
+		"author": "Elmer"
+	}, {
+		"title": "Just watched Paranomal Activity..",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "scared",
+		"id": "scared4",
+		"left": "true",
+		"time": "1455455444",
+		"author": "Eden"
+	}],
+	"sad": [{
+		"title": "He cheated..",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "sad",
+		"id": "sad1",
+		"time": "1454475444",
+		"author": "Elmer"
+	}, {
+		"title": "I just lost $100:(",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "sad",
+		"id": "sad2",
+		"left": "true",
+		"time": "1455395444",
+		"author": "Brian"
+	}, {
+		"title": "Rejected by my dream school:(",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "sad",
+		"id": "sad3",
+		"left": "true",
+		"time": "1455735444",
+		"author": "Brian"
+	}, {
+		"title": "My dog is sick, and there is nothing I can do:(",
+		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"mood": "sad",
+		"id": "sad4",
+		"time": "1455095444",
+		"author": "Eden"
+	}]
 }

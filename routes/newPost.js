@@ -10,9 +10,13 @@ exports.writePost = function(req, res) {
 
 };
 
+var counter = 10;
+
 exports.addPost = function(req, res) {
 	var mood = req.body.mood;
+	req.body.id = req.body.id + counter;
 	feeds[mood].unshift(req.body);
+	counter++;
 	res.send({
 		result: true
 	});
