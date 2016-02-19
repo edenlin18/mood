@@ -172,6 +172,7 @@ function validateLoginForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
+				myLocalStorage.set('username', "demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
@@ -218,6 +219,7 @@ function validateSignupForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
+				mylocalStorage.set('username', "demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
@@ -230,6 +232,7 @@ function validateSignupForm() {
 function logout() {
 	myLocalStorage.remove('login');
 	myLocalStorage.remove('email');
+	myLocalStorage.remove('username');
 	window.location.reload(true);
 }
 
@@ -239,6 +242,8 @@ function addPost() {
 	var mood = document.newPostForm.mood.value; // $(".post").attr('id');
 	var emojiStoryHtml = $(".emoji-story").html();
 	var title = $(".newPost-title").val();
+	var author = myLocalStorage.get('username');
+
 	$.ajax({
 		type: 'POST',
 		url: serverUrl + '/addPost',
@@ -246,7 +251,8 @@ function addPost() {
 			title: title,
 			content: emojiStoryHtml,
 			mood: mood,
-			id: mood + counter
+			id: mood + counter,
+			author: author
 		}),
 		contentType: 'application/json',
 		dataType: 'json',
