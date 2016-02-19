@@ -52,7 +52,7 @@
 
           <ul class="timeline">
             {{#each feeds}}
-                <li class= "timeline-feed">
+                <li id= "timeline-feed{{id}}">
                     <div class="timeline-badge" ><img src="img/moods/{{mood}}.png" class="img-responsive mood-img" alt=""></div>
                     <div class="timeline-panel" style="background:white;">
                         <div class="timeline-heading">
@@ -66,21 +66,18 @@
                         </div>
                     </div>
                 </li>
+                {{#unless left}}
+                    <script type="text/javascript">
+                        var el = document.getElementById("timeline-feed{{id}}");
+                        console.log(el);
+                        el.className += " timeline-inverted";    
+                    </script>
+                {{/unless}}
             {{/each}}
             
           </ul>
         </div>
 
-        <script type="text/javascript">
-            var el = document.getElementsByClassName("timeline-feed");
-            console.log(el);
-            for(i=0; i<el.length; i++){
-                var random_num = Math.random();
-                if(random_num > 0.5){
-                    el[i].className += " timeline-inverted";    
-                }
-            }
-        </script>
     </section>
 
 <!-- New Post Form -->
