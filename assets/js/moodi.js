@@ -1,6 +1,6 @@
 'use strict';
-var devMode = false;
-var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
+var devMode = true;
+var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi-old.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -82,26 +82,6 @@ function initializePage() {
 		if (e.which === 13) {
 			e.preventDefault();
 		}
-	});
-
-	$('.timeline-panel').click(function(e) {
-		var $this = $(this);
-		var $body = $this.find('.timeline-body');
-		var $more = $this.find('.more');
-
-		if ($more.length != 0) {
-			$more[0].remove();
-		} else {
-			$this.append('<div class="more"><a href="" onclick="return false;"><h3>...See More</h3><a>');
-		}
-
-		$body.toggle('slow');
-
-		// $(this).find('.timeline-body').toggle(function() {
-		// 	$(this).find('.more').remove();
-		// }, function() {
-		// 	$(this).append('<div class="more">more</div>');
-		// });
 	});
 }
 
@@ -291,7 +271,7 @@ function addPost() {
 
 	var random_num = Math.random();
 
-	if (random_num > 0.5) {
+	if(random_num > 0.5){
 		request.left = true;
 	}
 
