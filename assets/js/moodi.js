@@ -219,7 +219,7 @@ function validateSignupForm() {
 			if (data.result == true) {
 				myLocalStorage.set('login', true);
 				myLocalStorage.set('email', email);
-				mylocalStorage.set('username', "Demo");
+				myLocalStorage.set('username', "Demo");
 				window.location.reload(true);
 			} else {
 				errors[errors.length] = data.error;
