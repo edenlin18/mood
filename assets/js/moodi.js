@@ -1,6 +1,6 @@
 'use strict';
 var devMode = false;
-var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
+var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi-old.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
