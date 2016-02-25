@@ -18,10 +18,10 @@ function translateToEmoji(mood, content) {
 	var result = '';
 	word.forEach(function(w) {
 		if (w === '') {
-			result += '&nbsp';
+			result += '&nbsp&nbsp&nbsp';
 		} else {
 			var emoji = emojiLib[mood][Math.floor(Math.random() * emojiLib[mood].length)];
-			result += '<img class="emoji" src="' + emoji + '">';
+			result += '<img class="emoji" src="' + emoji + '">&nbsp&nbsp&nbsp';
 		}
 	});
 
@@ -30,35 +30,31 @@ function translateToEmoji(mood, content) {
 
 exports.view = function(req, res) {
 	var mood = req.query.mood;
-	var sortedFeeds;
-	console.log(mood);
-	var tempFeeds = JSON.parse(JSON.stringify(feeds));
-	for (var key in tempFeeds) {
-		tempFeeds[key].forEach(function(obj, index, theArray) {
-			theArray[index].content = translateToEmoji(theArray[index].mood, theArray[index].content);
+
+	for (var key in feeds) {
+		feeds[key].forEach(function(obj, index, theArray) {
+			if (theArray[index].emojiContent == '') {
+				theArray[index].emojiContent = translateToEmoji(theArray[index].mood, theArray[index].content);
+			}
 		});
-		// console.log(feeds[key]);
 	}
 
 	if (mood === 'all') {
 		var allMood = [];
-		for (var key in tempFeeds) {
-			allMood = allMood.concat(tempFeeds[key]);
-			// console.log(feeds[key]);
+		for (var key in feeds) {
+			allMood = allMood.concat(feeds[key]);
 		}
 		allMood.sort(compareTimeStamp);
-		console.log(allMood);
 
 		res.render('feedPage', {
 			"feeds": allMood,
 			"mood": mood
 		});
 	} else {
-		tempFeeds[mood].sort(compareTimeStamp);
-		console.log(tempFeeds[mood]);
+		feeds[mood].sort(compareTimeStamp);
 
 		res.render('feedPage', {
-			"feeds": tempFeeds[mood],
+			"feeds": feeds[mood],
 			"mood": mood
 		});
 	}

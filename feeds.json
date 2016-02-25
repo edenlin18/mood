@@ -2,6 +2,7 @@
 	"happy": [{
 		"title": "Lakers Game!!",
 		"content": "testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "happy",
 		"id": "happy1",
 		"left": "true",
@@ -10,6 +11,7 @@
 	}, {
 		"title": "Hapy Birthday Vivian:D",
 		"content": "testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "happy",
 		"id": "happy2",
 		"time": "1455275444",
@@ -17,6 +19,7 @@
 	}, {
 		"title": "Graduation",
 		"content": "testing feed",
+		"emojiContent": "",
 		"mood": "happy",
 		"id": "happy3",
 		"time": "1455175444",
@@ -24,6 +27,7 @@
 	}, {
 		"title": "OMG! I just saw Kobe Bryant!!!!!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "happy",
 		"id": "happy4",
 		"left": "true",
@@ -33,6 +37,7 @@
 	"mad": [{
 		"title": "WHY CAN'T PEOPLE MIND THEIR OWN BUSINESS?",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "mad",
 		"id": "mad1",
 		"time": "1455075444",
@@ -40,6 +45,7 @@
 	}, {
 		"title": "My dad just lock me out of my computer!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "mad",
 		"id": "mad2",
 		"left": "true",
@@ -48,6 +54,7 @@
 	}, {
 		"title": "FML...two tickets in a day???",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "mad",
 		"id": "mad3",
 		"left": "true",
@@ -56,6 +63,7 @@
 	}, {
 		"title": "Just had a fight with my sister!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "mad",
 		"id": "mad4",
 		"time": "1455575444",
@@ -64,6 +72,7 @@
 	"lovely": [{
 		"title": "I am the luckiest girl in the world!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "lovely",
 		"id": "lovely1",
 		"time": "1455175444",
@@ -71,6 +80,7 @@
 	}, {
 		"title": "She said YES!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "lovely",
 		"id": "lovely2",
 		"time": "1455675444",
@@ -78,6 +88,7 @@
 	}, {
 		"title": "I just got proposed:DDDDD",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "lovely",
 		"id": "lovely3",
 		"left": "true",
@@ -86,6 +97,7 @@
 	}, {
 		"title": "Best Valentine's Day ever!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "lovely",
 		"id": "lovely4",
 		"left": "true",
@@ -95,6 +107,7 @@
 	"neutral": [{
 		"title": "Feeling Alright~",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "neutral",
 		"id": "neutral1",
 		"left": "true",
@@ -103,6 +116,7 @@
 	}, {
 		"title": "Game all day~~",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "neutral",
 		"id": "neutral2",
 		"time": "1455175444",
@@ -110,6 +124,7 @@
 	}, {
 		"title": "Nothing to do-.-",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "neutral",
 		"id": "neutral3",
 		"left": "true",
@@ -118,6 +133,7 @@
 	}, {
 		"title": "Just had an okay dinner, meh..",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "neutral",
 		"id": "neutral4",
 		"time": "1455575444",
@@ -126,6 +142,7 @@
 	"scared": [{
 		"title": "OMG, my cat went nutzzzzz!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "scared",
 		"id": "scared1",
 		"left": "true",
@@ -134,6 +151,7 @@
 	}, {
 		"title": "HELP!! I think someone is outside my house!!!",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "scared",
 		"id": "scared2",
 		"time": "1455655444",
@@ -141,6 +159,7 @@
 	}, {
 		"title": "Almost got hit by a car:0",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "scared",
 		"id": "scared3",
 		"time": "1455175444",
@@ -148,6 +167,7 @@
 	}, {
 		"title": "Just watched Paranomal Activity..",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "scared",
 		"id": "scared4",
 		"left": "true",
@@ -157,6 +177,7 @@
 	"sad": [{
 		"title": "He cheated..",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "sad",
 		"id": "sad1",
 		"time": "1454475444",
@@ -164,6 +185,7 @@
 	}, {
 		"title": "I just lost $100:(",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "sad",
 		"id": "sad2",
 		"left": "true",
@@ -172,6 +194,7 @@
 	}, {
 		"title": "Rejected by my dream school:(",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "sad",
 		"id": "sad3",
 		"left": "true",
@@ -180,6 +203,7 @@
 	}, {
 		"title": "My dog is sick, and there is nothing I can do:(",
 		"content": "testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed testing feed",
+		"emojiContent": "",
 		"mood": "sad",
 		"id": "sad4",
 		"time": "1455095444",

@@ -1,5 +1,5 @@
 'use strict';
-var devMode = false;
+var devMode = true;
 var serverUrl = devMode ? 'http://localhost:3000' : 'http://moodi.herokuapp.com';
 
 // Call this function when the page loads (the "ready" event)
@@ -103,7 +103,6 @@ function convertToEmoji(e) {
 	// }
 
 	$.get("emoji?word=" + $(this).val() + '&mood=' + document.newPostForm.mood.value, function(data) {
-		console.log(data);
 		$('.emoji-story').html(data);
 	});
 }
@@ -263,6 +262,7 @@ function addPost() {
 	var request = {
 		title: title,
 		content: content,
+		emojiContent: emojiStoryHtml,
 		mood: mood,
 		id: mood,
 		time: timestamp,
