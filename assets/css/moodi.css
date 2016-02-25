@@ -34,7 +34,7 @@ body {
 
 .mood-caption {
     position: relative;
-    opacity: 0;
+    opacity: 1;
     background: transparent;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
@@ -68,13 +68,10 @@ body {
     font-weight: normal;
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
     .mood-caption {
-        display: none;
-    }
-    /*    .mood-caption {
         opacity: 0;
-    }*/
+    }
 }
 
 .add-post-btn {
