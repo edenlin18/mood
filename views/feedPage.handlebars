@@ -29,7 +29,7 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
+    <![endif]-->
 </head>
 
 <body id="page-top" class="index">
@@ -56,9 +56,7 @@
                     <div class="timeline-badge" ><img src="img/moods/{{mood}}.png" class="img-responsive mood-img" alt=""></div>
                     <div class="timeline-panel" style="background:white;">
                         <div class="timeline-heading">
-                            <!-- <a href="/details?mood={{mood}}&id={{id}}"> -->
                                 <h4 class="timeline-title">{{title}}</h4>
-                            <!-- </a> -->
                           <p><small class="text-muted" id="time{{id}}"><i class="glyphicon glyphicon-time"></i></small></p>
                         </div>
                         <div class="timeline-body">
@@ -91,7 +89,6 @@
                 {{#unless left}}
                     <script type="text/javascript">
                         var el = document.getElementById("timeline-feed{{id}}");
-                        console.log(el);
                         el.className += " timeline-inverted";    
                     </script>
                 {{/unless}}
@@ -120,13 +117,14 @@
                                 <div class="form-group">
                                     <textarea class="form-control newPost-title" rows="1" style="resize: none;" name="title"></textarea>
                                 </div>
-                                <h4>Emoji Story:</h4>
-                                <div class="form-control emoji-story"></div>
-                                <h4>Story:</h4>
+                                
                                 <div class="form-group">
-                                    <textarea class="form-control text-story" rows="10" style="resize: none;" name="content"></textarea>
+                                    <h4>Story:</h4>
+                                    <textarea class="form-control text-story" style="height: 100px; resize: none;" name="content"></textarea>
+                                    <h4>Emoji Story:</h4>
+                                    <div class="form-control emoji-story"></div>
+                                    <input style="display: none;" name="mood" value="{{mood}}"></input>
                                 </div>
-                                <input style="display: none;" name="mood" value="{{mood}}"></input>
 
                                 <button type="button" class="btn btn-default" onClick="addPost()">Post</button>
                                 <button type="button" class="btn btn-default" class="close" data-dismiss="modal" onClick="cancelPost()">Cancel</button>
@@ -143,7 +141,7 @@
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -158,5 +156,6 @@
     <script src="js/freelancer.js"></script>
 
     <script src="js/moodi.js"></script>
+
 </body>
 </html>

@@ -83,6 +83,26 @@ function initializePage() {
 			e.preventDefault();
 		}
 	});
+
+	$('.timeline-panel').click(function(e) {
+		var $this = $(this);
+		var $body = $this.find('.timeline-body');
+		var $more = $this.find('.more');
+
+		if ($more.length != 0) {
+			$more[0].remove();
+		} else {
+			$this.append('<div class="more"><a href="" onclick="return false;"><h3>...See More</h3><a>');
+		}
+
+		$body.toggle('slow');
+
+		// $(this).find('.timeline-body').toggle(function() {
+		// 	$(this).find('.more').remove();
+		// }, function() {
+		// 	$(this).append('<div class="more">more</div>');
+		// });
+	});
 }
 
 function convertToEmoji(e) {
@@ -271,7 +291,7 @@ function addPost() {
 
 	var random_num = Math.random();
 
-	if(random_num > 0.5){
+	if (random_num > 0.5) {
 		request.left = true;
 	}
 

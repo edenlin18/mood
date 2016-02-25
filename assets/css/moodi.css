@@ -76,10 +76,22 @@ body {
 
 .add-post-btn {
     position: fixed;
-    top: 12%;
+    bottom: 0%;
     right: 1%;
     z-index: 1;
 }
+
+.emoji-story {
+    height: 100px;
+    overflow: auto;
+    background: #F5F5F5;
+}
+
+.emoji {
+    height: 30px;
+    width: 30px;
+}
+
 
 
 /*
@@ -398,15 +410,4 @@ body {
 .big-register:hover {
     border-color: #00A4E4;
     color: #00A4E4;
-}
-
-.emoji-story {
-    height: 300px;
-    overflow: auto;
-    background: #F5F5F5;
-}
-
-.emoji {
-    height: 30px;
-    width: 30px;
 }
