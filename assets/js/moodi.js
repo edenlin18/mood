@@ -83,6 +83,26 @@ function initializePage() {
 			e.preventDefault();
 		}
 	});
+
+	$('.add-post-btn').click(function() {
+		ga('send', 'event', 'addBtn', 'click');
+	});
+
+	$('.navbar-brand').click(function() {
+		ga('send', 'event', 'homeBtn', 'click');
+	})
+
+	$('.emoji-story').click(function() {
+		ga('send', 'event', 'emojiTextArea', 'click');
+	})
+
+	$('.text-story').click(function() {
+		ga('send', 'event', 'storyTextArea', 'click');
+	})
+
+	$('.timeline-panel').click(function() {
+		ga('send', 'event', 'timePanel', 'click');
+	})
 }
 
 function convertToEmoji(e) {
@@ -271,7 +291,7 @@ function addPost() {
 
 	var random_num = Math.random();
 
-	if(random_num > 0.5){
+	if (random_num > 0.5) {
 		request.left = true;
 	}
 
