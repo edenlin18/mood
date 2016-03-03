@@ -103,6 +103,26 @@ function initializePage() {
 		// 	$(this).append('<div class="more">more</div>');
 		// });
 	});
+
+	$('.add-post-btn').click(function() {
+		ga('send', 'event', 'addBtn', 'click');
+	});
+
+	$('.navbar-brand').click(function() {
+		ga('send', 'event', 'homeBtn', 'click');
+	})
+
+	$('.emoji-story').click(function() {
+		ga('send', 'event', 'emojiTextArea', 'click');
+	})
+
+	$('.text-story').click(function() {
+		ga('send', 'event', 'storyTextArea', 'click');
+	})
+
+	$('.timeline-panel').click(function() {
+		ga('send', 'event', 'timePanel', 'click');
+	})
 }
 
 function convertToEmoji(e) {
